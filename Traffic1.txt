@@ -1,0 +1,70 @@
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(1, 2, 4, 5, 6, 7);
+
+const int trigPinUp = 9;
+const int echoPinUp = 10;
+const int trigPinDown = 11;
+const int echoPinDown = 12;
+int countdown = 0; // Initialize countdown to 0
+bool isCounting = false; // Flag to indicate if countdown is active
+
+long duration;
+int distanceCmUp, distanceCmDown;
+
+void setup() {
+  lcd.begin(16, 2);
+  pinMode(trigPinUp, OUTPUT);
+  pinMode(echoPinUp, INPUT);
+  pinMode(trigPinDown, OUTPUT);
+  pinMode(echoPinDown, INPUT);
+}
+
+void loop() {
+  digitalWrite(trigPinUp, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPinUp, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPinUp, LOW);
+  duration = pulseIn(echoPinUp, HIGH);
+  distanceCmUp = duration * 0.034 / 2;
+
+  digitalWrite(trigPinDown, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPinDown, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPinDown, LOW);
+  duration = pulseIn(echoPinDown, HIGH);
+  distanceCmDown = duration * 0.034 / 2;
+
+  lcd.setCursor(0, 0);
+
+  if (distanceCmUp <= 10) {
+    countdown = 10;
+    isCounting = true;
+  } else if (distanceCmUp > 10 && distanceCmUp <= 20) {
+    countdown = 12;
+    isCounting = true;
+  } else if (distanceCmUp > 20 && distanceCmUp <= 30) {
+    countdown = 15;
+    isCounting = true;
+  } else if (distanceCmUp > 30 && distanceCmUp <= 40) {
+    countdown = 20;
+    isCounting = true;
+  } else {
+    countdown = 30;
+    isCounting = true;
+  }
+
+  lcd.print("Distance: ");
+  lcd.print(distanceCmUp);
+  lcd.print(" cm");
+  lcd.setCursor(0, 1);
+  lcd.print("Countdown: ");
+  lcd.print(countdown);
+
+  if (isCounting = true) {
+    countdown--; // Decrease the countdown value
+  }
+
+  delay(1000); // Delay for a second before updating the countdown
+}
