@@ -83,7 +83,11 @@ void light(int low1, int low2, int high){
 }
 
 int isVechileDetected(int pin){
-    int signal = pulseIn(pin, HIGH);
+    //int signal = pulseIn(pin, HIGH);
+    int signal = 0;
+    // int reading = 0, cm = 0;
+    // reading = pulseIn(echo_1, HIGH);
+    // cm = 0.017 * reading;
     if(signal){
         return 1;
     }
@@ -110,10 +114,6 @@ void setup()
 }
 
 void loop(){
-
-    int reading = 0, cm = 0;
-    reading = pulseIn(echo_1, HIGH);
-    cm = 0.017 * reading;
 
     if(state_1 == 'r' && ultra_sonic_1 == true){
         if(isVechileDetected(echo_1) > 0){
