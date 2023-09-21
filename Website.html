@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <style>
+        /* Reset some default styles for consistency */
+        body, h1, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Define styles for the title bar */
+        .title-bar {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Define styles for the navigation bar */
+
+        .topnav {
+          overflow: hidden;
+          background-color: #b2b2b2;
+        }
+        
+
+        /* Navbar links */
+        .topnav a {
+          float: left;
+          display: block;
+          color: #000000;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        /* Links - change color on hover */
+        .topnav a:hover {
+          background-color: #ccbbbb;
+          color: rgb(0, 0, 0);
+        }
+
+        /* Define styles for the background image */
+        .background {
+            background-image: url("https://images.unsplash.com/photo-1498084393753-b411b2d26b34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80");
+            background-size: cover;
+            background-position: center;
+            width: auto;
+            height: 400px; /* Adjust the height as needed */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Style the title in the center of the background image */
+        .background{
+            color: #fff;
+            font-size: 75px;
+        }
+
+        /* Style the empty block with a description */
+        .description {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        .gallery{
+          margin: 20px;
+          display: flex;
+          justify-content: space-between;
+          padding: 0;
+          background-size: cover;
+        }
+
+        /* Style each navigation item */
+        .gallery .item{
+            flex: 1;
+            text-align: center;
+        }
+
+        .gallery .item img{
+            width: auto;
+            height: 300px;
+        }
+
+        @media screen and (orientation: portrait) {
+            .gallery {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .links{
+            background: #009dff;
+            color: black;
+        }
+
+        .footer{
+            background-color: #009dff;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 30px;
+            background-size: cover;
+        }
+
+        .footer .item{
+            flex: 1;
+            text-align: center;
+        }
+
+        .footer .item img{
+            width: auto;
+            height: 150px;
+        }
+
+        /* video {
+            width: 100%;
+            height: auto;
+        } */
+
+    </style>
+</head>
+<body>
+    <!-- <div class="title-bar">
+        <h1>Group 6</h1>
+    </div> -->
+
+    <div class="background">
+        Smart Traffic<br>Light<br><br>
+    </div>
+
+    <div class="topnav">
+        <ul>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#footer">Contact</a>
+        </ul>
+    </div>
+
+    <div class="description">
+        <h1>Description</h1>
+        <p>
+            Smart traffic lights are a key component of smart cities and urban mobility strategies aimed at making
+            transportation more efficient and sustainable. They play a crucial role in managing traffic in increasingly
+            congested urban areas while also improving safety and reducing the environmental impact of transportation.
+        </p>
+    </div>
+
+    <!-- <video controls>
+        <source src="C:\Users\achar_bm78ntr\Desktop\Self Introduction" type="video/mp4">
+        <source src="" type="video/ogg">
+    </video> -->
+
+    <div class="description">
+        <h1>Hardwares</h1>
+    </div>
+
+    <div class = "gallery">
+    <div class="item"><img src="https://th.bing.com/th/id/R.22bbd30b94e92d0ae9a46b19185ce579?rik=3ACgTCrUkep0Kg&pid=ImgRaw&r=0" alt=""></div>
+    <div class="item"><img src="https://vendimageuploadcdn.global.ssl.fastly.net/q95/vend-images/product/original/a/7/a744d4cc46b868e2112635bcee8d0afcc79ae37c.jpg" alt=""></div>
+    <div class="item"><img src="https://i.pinimg.com/originals/27/2b/31/272b31971a68a9a15a1da24d6285f54d.jpg" alt=""></div>
+    </div>
+
+    <div class="footer">
+        <div class="item"><h1>About US</h1></div>
+    </div>
+    <div class="footer">
+        <div class="item"><img src="https://images.unsplash.com/photo-1471306224500-6d0d218be372?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fFNtYXJ0JTIwVHJhZmZpYyUyMGxpZ2h0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt=""></div>
+        <div class="item"><img src="https://images.unsplash.com/photo-1471306224500-6d0d218be372?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fFNtYXJ0JTIwVHJhZmZpYyUyMGxpZ2h0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt=""></div>
+        <div class="item"><img src="https://images.unsplash.com/photo-1471306224500-6d0d218be372?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fFNtYXJ0JTIwVHJhZmZpYyUyMGxpZ2h0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt=""></div>
+    </div>
+    <div class="footer">
+        <div class="item">Person 1</div>
+        <div class="item">Person 1</div>
+        <div class="item">Person 1</div>
+    </div>
+
+    <a name="footer"></a>
+</body>
+</html>
