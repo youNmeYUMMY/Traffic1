@@ -13,16 +13,17 @@
 
         /* Define styles for the title bar */
         .title-bar {
-            background-color: #333;
-            color: #fff;
+            background-color: #ffffff;
+            color: #000000;
             padding: 10px;
             text-align: center;
         }
 
         /* Define styles for the navigation bar */
+
         .topnav {
           overflow: hidden;
-          background-color: #333;
+          background-color: #b2b2b2;
         }
         
 
@@ -30,7 +31,7 @@
         .topnav a {
           float: left;
           display: block;
-          color: #f2f2f2;
+          color: #000000;
           text-align: center;
           padding: 14px 16px;
           text-decoration: none;
@@ -38,8 +39,8 @@
 
         /* Links - change color on hover */
         .topnav a:hover {
-          background-color: #ddd;
-          color: black;
+          background-color: #ccbbbb;
+          color: rgb(0, 0, 0);
         }
 
         /* Define styles for the background image */
@@ -56,9 +57,9 @@
         }
 
         /* Style the title in the center of the background image */
-        .background h1 {
+        .background{
             color: #fff;
-            font-size: 36px;
+            font-size: 75px;
         }
 
         /* Style the empty block with a description */
@@ -66,13 +67,16 @@
             background-color: #fff;
             padding: 20px;
             text-align: center;
+            padding-left: 10%;
+            padding-right: 10%;
         }
 
         .gallery{
-          margin: 5px;
+          margin: 20px;
           display: flex;
           justify-content: space-between;
           padding: 0;
+          background-size: cover;
         }
 
         /* Style each navigation item */
@@ -81,63 +85,179 @@
             text-align: center;
         }
 
+        .col{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            align-items: left;
+            position: relative;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        /* .col::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #000; 
+            left: 0;
+        }
+
+        .col::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #000;
+            right: 0;
+        } 
+        */
+
+        .gallery .item .col img{
+            width: auto;
+            height: 300px;
+        }
+
+        @media screen and (orientation: portrait) {
+            .gallery {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .links{
+            background: #009dff;
+            color: black;
+        }
+
+        .footer{
+            background-color: #009dff;
+            padding-top: 30px;
+            background-size: cover;
+            text-align: center;
+            color: floralwhite;
+        }
+
+        .gif-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 100%;
+            height: auto; 
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+            height: 100vh;  
+        }
+
+        
+        /* .gif-container div{
+            display: flex;
+            flex-direction: column;
+        } */
 
 
     </style>
 </head>
 <body>
-    <div class="title-bar">
+    <!-- <div class="title-bar">
         <h1>Group 6</h1>
+    </div> -->
+
+    <div class="background">
+        Smart Traffic<br>Light<br><br>
     </div>
 
     <div class="topnav">
         <ul>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+            <a href="#description">Description</a>
+            <a href="#hardware">Hardware</a>
+            <a href="#gif">Gif</a>
+            <a href="#footer">About US</a>
         </ul>
     </div>
 
-    <div class="background">
-        <h1 style="font-size: 75px;">Smart<br>Traffic System</h1>
+    <a name="description"></a>
+    <div class="description">
+        <h1>Description</h1>
+        <p>
+            Smart traffic lights are a key component of smart cities and urban mobility strategies aimed at making
+            transportation more efficient and sustainable. They play a crucial role in managing traffic in increasingly
+            congested urban areas while also improving safety and reducing the environmental impact of transportation.
+        </p>
     </div>
 
+    <a name="hardware"></a>
     <div class="description">
-        <h2>About US:</h2>
+        <h1>Hardwares</h1>
     </div>
 
     <div class = "gallery">
-      <div class="item">
-        <img src="1.png" width="100" height="120"><br>
-        Person 1<br><br>
-        <table style = "width: 30%;">
-            <tr>
-                biography of person 1
-            </tr>
-        </table>
-      </div>
-      <div class="item">
-        <img src="2.png" width="100" height="120"><br>
-        Person 2
-        <br><br>
-        <table style = "width: 30%;">
-            <tr>
-                biography of person 2
-            </tr>
-        </table>
-      </div>
-      <div class="item">
-        <img src="3.png" width="100" height="120"><br>
-        Person 3<br><br>
-        <table style = "width: 30%;">
-            <tr>
-                biography of person 3
-            </tr>
-        </table>
+    <div class="item">
+        <div class="col">
+            <img src="https://th.bing.com/th/id/R.22bbd30b94e92d0ae9a46b19185ce579?rik=3ACgTCrUkep0Kg&pid=ImgRaw&r=0" alt="">
+            <p>An ultrasonic distance sensor is a device that measures the distance between two objects using sound waves. It operates by emitting a high-pitched sound wave that bounces off the object and returns to the sensor. The sensor can calculate the distance to an object by measuring the time it takes for the sound wave to travel to it and back. Consider how a bat uses echolocation to determine how far away something is by listening to the sound bounce back to them. Ultrasonic distance sensors are frequently used in applications such as car parking sensors and robotics to assist objects in avoiding obstacles.</p>
+        </div>
+    </div>
+    <div class="item">
+        <div class="col">
+            <img src="https://vendimageuploadcdn.global.ssl.fastly.net/q95/vend-images/product/original/a/7/a744d4cc46b868e2112635bcee8d0afcc79ae37c.jpg" alt="">
+            <p>An LCD 16x2, which stands for "Liquid Crystal Display 16 characters by 2 lines," is a small screen that is commonly found in calculators, digital clocks, and small appliances. It has two rows, each with the ability to display up to 16 characters or symbols. When an electrical current is applied to these screens, liquid crystal technology produces visible characters. They provide basic text or numeric information in an easy-to-read format, making them useful for displaying important information in a variety of everyday gadgets.</p>
+        </div>
+    </div>
+    <div class="item">
+        <div class="col">
+            <img src="https://i.pinimg.com/originals/27/2b/31/272b31971a68a9a15a1da24d6285f54d.jpg" alt="">
+            <p>An Arduino is a small computer that can be used to build a variety of electronic projects even if you are not a computer expert. It functions as a brain for your gadgets and experiments. By connecting an Arduino to various components such as sensors, motors, and LEDs, you can create things such as blinking lights, temperature sensors, robots, and much more. You write simple code on your computer to instruct the Arduino, and it then executes your commands, making it an excellent tool for learning about electronics and programming. It's a fantastic way to turn your creative ideas into functional devices!</p>
+        </div>
     </div>
     </div>
 
-    
+    <a name="gif"></a>
+    <div class="gif-container">
+        <!-- <div class="item">
+            Tinkercad Model
+        </div> -->
+        <div class="item">
+            <img src="tinkercad.gif" alt="GIF" class="gif">
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="item"><h1>About US</h1></div>
+    </div>
+
+    <div class="footer">
+        <div class = "gallery">
+            <div class="item">
+                <div class="col">
+                    <img src="https://th.bing.com/th/id/R.22bbd30b94e92d0ae9a46b19185ce579?rik=3ACgTCrUkep0Kg&pid=ImgRaw&r=0" alt="">
+                    <p>An ultrasonic distance sensor is a device that measures the distance between two objects using sound waves. It operates by emitting a high-pitched sound wave that bounces off the object and returns to the sensor. The sensor can calculate the distance to an object by measuring the time it takes for the sound wave to travel to it and back. Consider how a bat uses echolocation to determine how far away something is by listening to the sound bounce back to them. Ultrasonic distance sensors are frequently used in applications such as car parking sensors and robotics to assist objects in avoiding obstacles.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="col">
+                    <img src="https://vendimageuploadcdn.global.ssl.fastly.net/q95/vend-images/product/original/a/7/a744d4cc46b868e2112635bcee8d0afcc79ae37c.jpg" alt="">
+                    <p>An LCD 16x2, which stands for "Liquid Crystal Display 16 characters by 2 lines," is a small screen that is commonly found in calculators, digital clocks, and small appliances. It has two rows, each with the ability to display up to 16 characters or symbols. When an electrical current is applied to these screens, liquid crystal technology produces visible characters. They provide basic text or numeric information in an easy-to-read format, making them useful for displaying important information in a variety of everyday gadgets.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="col">
+                    <img src="https://i.pinimg.com/originals/27/2b/31/272b31971a68a9a15a1da24d6285f54d.jpg" alt="">
+                    <p>An Arduino is a small computer that can be used to build a variety of electronic projects even if you are not a computer expert. It functions as a brain for your gadgets and experiments. By connecting an Arduino to various components such as sensors, motors, and LEDs, you can create things such as blinking lights, temperature sensors, robots, and much more. You write simple code on your computer to instruct the Arduino, and it then executes your commands, making it an excellent tool for learning about electronics and programming. It's a fantastic way to turn your creative ideas into functional devices!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a name="footer"></a>
 </body>
 </html>
