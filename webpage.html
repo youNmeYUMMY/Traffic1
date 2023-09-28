@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Website Title</title>
     <style>
+
         /* Reset some default styles for consistency */
         body, h1, ul, li {
             margin: 0;
@@ -25,7 +26,7 @@
           overflow: hidden;
           background-color: #b2b2b2;
         }
-        
+
 
         /* Navbar links */
         .topnav a {
@@ -49,7 +50,7 @@
             background-size: cover;
             background-position: center;
             width: auto;
-            height: 700px; /* Adjust the height as needed */
+            height: 900px; /* Adjust the height as needed */
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -85,6 +86,22 @@
             text-align: center;
         }
 
+        .gallery .item img{
+            width: auto;
+            height: 400px;
+        }
+
+        .gallery .item .p{
+            width: auto;
+            height: 300px; /* Adjust the height as needed */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
         .col{
             padding-top: 20px;
             padding-bottom: 20px;
@@ -93,27 +110,6 @@
             padding-left: 10%;
             padding-right: 10%;
         }
-
-        /* .col::before{
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #000; 
-            left: 0;
-        }
-
-        .col::after{
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #000;
-            right: 0;
-        } 
-        */
 
         .gallery .item .col img{
             width: auto;
@@ -132,6 +128,19 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .gallery .item .p{
+                width: auto;
+                height: 300px; /* Adjust the height as needed */
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: 10%;
+                padding-right: 10%;
+                list-style: none;
+        }
+
         }
 
         .links{
@@ -147,15 +156,20 @@
             color: floralwhite;
         }
 
-        .gif-container {
-            /* border: 1px solid #ccc; */
-            padding: 20px;
-            max-width: 100%;
-            height: auto; 
-            display: flex;
-            justify-content: center;
-            align-items: center;  
-            height: 100vh;  
+        .gif-container .item {
+               border: 0px solid #ccc;
+               padding: 20px;
+               width: 100%;
+               height: auto;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               min-height: 75vh;
+        }
+
+        .gif-container .item img{
+            width : auto;
+            height : 750px;
         }
 
         p, h1, .background{
@@ -168,19 +182,17 @@
             text-align: center;
             padding-top: 5px;
         }
-        
-        /* .gif-container div{
-            display: flex;
-            flex-direction: column;
-        } */
 
+        .footer .gallery .item .col img{
+            width: 100px; /* Adjust the width and height to your desired circle size */
+            height: 100px;
+            border-radius: 50%; /* This creates a circular shape */
+            overflow: hidden; 
+        }
 
     </style>
 </head>
 <body>
-    <!-- <div class="title-bar">
-        <h1>Group 6</h1>
-    </div> -->
 
     <div class="background">
         Smart Traffic<br>Light<br><br>
@@ -191,6 +203,7 @@
             <a href="#description">Description</a>
             <a href="#hardware">Hardware</a>
             <a href="#gif">Gif</a>
+            <a href="#SDG">UN sustainable Goals</a>
             <a href="#footer">About US</a>
         </ul>
     </div>
@@ -236,13 +249,51 @@
     <hr>
     <h1>Smart Traffic Lights simulation</h1>
     <div class="gif-container">
-        <!-- <div class="item">
-            Tinkercad Model
-        </div> -->
         <div class="item">
             <img src="tinkercad.gif" alt="GIF" class="gif">
         </div>
     </div>
+
+    <a name="SDG"></a>
+    <hr>
+    <h1 style="padding: 50px;">UN Sustainable Goals</h1>
+    <div class="gallery">
+        <div class="item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Sustainable_Development_Goal_11SustainableCities.svg/345px-Sustainable_Development_Goal_11SustainableCities.svg.png" alt="">
+        </div>
+        <div class="item" style="text-align: center;">
+            <p class="p"> This goal aims to make cities inclusive, safe, resilient, and sustainable. A smart traffic light system can contribute to this goal by improving road safety, reducing traffic congestion, and decreasing carbon emissions from idling vehicles. It can also enhance the quality of urban life by reducing noise and air pollution</p>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <div class="item" style="text-align: center;">
+            <p class="p"> By reducing traffic congestion and improving air quality, a smart traffic light system can contribute to better public health outcomes.</p>
+        </div>
+        <div class="item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Sustainable_Development_Goal_03GoodHealth.svg/345px-Sustainable_Development_Goal_03GoodHealth.svg.png" alt="">
+        </div>
+    </div>
+
+    <div class="gallery">
+        <div class="item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Sustainable_Development_Goal_09Industry.svg/345px-Sustainable_Development_Goal_09Industry.svg.png" alt="">
+        </div>
+        <div class="item" style="text-align: center;">
+            <p class="p"> The development and implementation of a smart traffic light system demonstrate innovation in technology and infrastructure.</p>
+        </div>
+    </div>
+
+
+    <div class="gallery">
+        <div class="item">
+
+        </div>
+        <div class="item">
+
+        </div>
+    </div>
+    <hr>
 
     <div class="footer">
         <div class="item"><h1>About US</h1></div>
