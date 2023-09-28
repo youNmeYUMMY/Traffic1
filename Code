@@ -1,0 +1,110 @@
+#include <LiquidCrystal.h>
+LiquidCrystal lcd_up(1, 2, 4, 5, 6, 7);
+LiquidCrystal lcd_right(14, 30, 22, 24, 26, 28);
+
+int opt = 0;
+int non_stop = 0;
+
+char state = 'r';
+
+const int trigPinDown = 9;
+const int echoPinDown = 10;
+const int trigPinUp = 11;
+const int echoPinUp = 12;
+int countdownUp = 0;
+int countdownRight = 0;
+bool isCounting = false; // Flag to indicate if countdown is active
+
+long duration;
+int distanceCmUp, distanceCmDown;
+
+void setup() {
+  lcd_up.begin(16, 2);
+  lcd_right.begin(16, 2); // Initialize both LCD displays
+  pinMode(trigPinDown, OUTPUT);
+  pinMode(echoPinDown, INPUT);
+  pinMode(trigPinUp, OUTPUT);
+  pinMode(echoPinUp, INPUT);
+}
+
+void loop() {
+  // ... (your sensor readings and distance calculations)
+
+  if (distanceCmDown >= 200) {
+    countdownUp = 2;
+    countdownRight = 0; // Ensure the other lane is green
+    isCounting = true;
+  } else if (distanceCmDown < 200 && distanceCmDown >= 100) {
+    countdownUp = 4;
+    countdownRight = 0; // Ensure the other lane is green
+    isCounting = true;
+  } else if (distanceCmDown < 100 && distanceCmDown >= 50) {
+    countdownUp = 6;
+    countdownRight = 0; // Ensure the other lane is green
+    isCounting = true;
+  } else if (distanceCmDown < 50 && distanceCmDown >= 25) {
+    countdownUp = 8;
+    countdownRight = 0; // Ensure the other lane is green
+    isCounting = true;
+  } else {
+    countdownUp = 10;
+    countdownRight = 0; // Ensure the other lane is green
+    isCounting = true;
+  }
+  
+  if (distanceCmUp >= 200) {
+    countdownRight = 2;
+    countdownUp = 0; // Ensure the other lane is green
+    isCounting = true;
+  } else if (distanceCmUp < 200 && distanceCmUp >= 100) {
+    countdownRight = 4;
+    countdownUp = 0; // Ensure the other lane is green
+    isCounting = true;
+  } else if (distanceCmUp < 100 && distanceCmUp >= 50) {
+    countdownRight = 6;
+    countdownUp = 0; // Ensure the other lane is green
+    isCounting = true;
+  } else if (distanceCmUp < 50 && distanceCmUp >= 25) {
+    countdownRight = 8;
+    countdownUp = 0; // Ensure the other lane is green
+    isCounting = true;
+  } else {
+    countdownRight = 10;
+    countdownUp = 0; // Ensure the other lane is green
+    isCounting = true;
+  }
+  
+  if (state == 'r') {
+    opt = 1;
+    state = 'g';
+  } else if (state == 'g') {
+    opt = 2;
+    state = 'r';
+  }
+
+  while (countdownUp != 0 || countdownRight != 0) {
+    lcd_up.clear();
+    lcd_up.setCursor(0, 0);
+    lcd_right.clear();
+    lcd_right.setCursor(0, 0);
+
+    if (opt == 1) {
+      lcd_up.print("RED");
+      lcd_right.print("GREEN");
+    } else if (opt == 2) {
+      lcd_up.print("GREEN");
+      lcd_right.print("RED");
+    }
+
+    lcd_up.setCursor(0, 1);
+    lcd_right.setCursor(0, 1);
+    lcd_up.print("Countdown: ");
+    lcd_right.print("Countdown: ");
+    lcd_up.print(countdownUp);
+    lcd_right.print(countdownRight);
+
+    countdownUp--;
+    countdownRight--;
+    delay(1000);
+  }
+}
